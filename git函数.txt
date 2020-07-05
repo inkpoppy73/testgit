@@ -1,0 +1,31 @@
+初始化函数
+    git config --global user.name "用户名"
+    git config --global user.email "邮箱"
+版本库创建
+    pwd : 显示当前目录
+    git init : 将此目录变为git可以管理的仓库(文件夹内的.git文件夹不可改动不可删除)
+操作函数
+    git add 文件名.文件格式 : 将文件添加到暂存区
+    git commit -m "注释" : 将添加到暂存区的函数提交到仓库
+    git status : 查看是否有文件未提交(未提交到暂存区为红色提示，提交到暂存区但未提交到仓库为绿色提示，已提交到仓库没有提示)
+    git diff 文件名.文件格式 : 对比文件前后区别
+    cat 文件名.文件格式 : 查看文件内容
+    git log (--pretty=oneline) : 查看历史记录(并将每一条记录显示一行)
+    git reset --hard HEAD^ : 将版本退回到前一版本
+    git reset --hard HEAD~100 : 将版本退回到前一百个版本
+    git reflog : 查看版本号
+    git reset --hard 版本号 : 退回到版本号指定版本
+    git checkout -- 文件名.文件格式 : 撤销工作区的修改(暂存区无版本回到版本库状态，暂存区有版本回到暂存区状态)
+    rm 文件名.文件格式 : 删除文件(储存改变需要先add)
+    git checkout -b 分支名 : 创建并切换到新分支
+    git branch 分支名 : 创建新分支
+    git branch : 查看分支
+    git checkout 分支 : 切换分支
+    git merge 分支 : 将分支合并到当前分支
+    git branch -d 分支 : 删除分支
+远程仓库操作指令
+    ssh-keygen -t rsa –C "邮箱" : 创建SSH Key
+    git remote add origin gihub仓库地址 : 链接本地仓库和GitHub仓库
+    git push -u origin 分支 : 将本地库的内容推送至远程库并将本地库和远程库对应分支链接
+    git push origin 分支 : 将本地库的内容推送至远程库(对应分支链接后可使用)
+    git clone github仓库地址 : 将远程库克隆到本地    
