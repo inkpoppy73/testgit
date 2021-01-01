@@ -19,7 +19,7 @@ while(slask):
     #print(pic_pt)
     if pic_pt == "":
         sys.exit()
-    num_change = int(input("Please enter the choice:1.Gray 2.Black or white 3.Blue red[Lock] 4.Painting[+width]"))
+    num_change = int(input("Please enter the choice: \n 1.Gray \n 2.Black or white \n 3.Blue red \n 4.Painting[+width] \n Please enter your choice:"))
     #读取图片并转为数组
     im = array(PIL.Image.open(pic_pt))
     img = PIL.Image.open(pic_pt).convert('LA')
@@ -46,15 +46,15 @@ while(slask):
         im=PIL.Image.fromarray(d.astype('uint8'))
         im.show()
         #goto.begin
-    #elif num_change == 3:
-        ##红色通道
-        #r = im[:,:,0]
-        ##交换红蓝通道并显示
-        #im[:,:,0] = im[:,:,2]
-        #im[:,:,2] = r
-        #imshow(im)
-        #show()
-        ##goto.begin
+    elif num_change == 3:
+        #红色通道
+        r = im[:,:,0]
+        #交换红蓝通道并显示
+        im[:,:,0] = im[:,:,2]
+        im[:,:,2] = r
+        imshow(im)
+        show()
+        #goto.begin
     elif num_change == 4:
         depth = 10                  # (0-100)
         grad = np.gradient(a)             #取图像灰度的梯度值
